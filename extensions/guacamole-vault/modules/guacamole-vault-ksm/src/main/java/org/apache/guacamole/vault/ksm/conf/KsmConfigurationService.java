@@ -230,9 +230,10 @@ public class KsmConfigurationService extends VaultConfigurationService {
         storage.saveString("hostname", getHostname());
         storage.saveString("serverPublicKeyId", String.valueOf(getServerPublicKeyId()));
 
+        boolean allowUnverifiedCertificate = getAllowUnverifiedCertificate();
         return new SecretsManagerOptions(
                 storage,
                 null,
-                getAllowUnverifiedCertificate());
+                allowUnverifiedCertificate);
     }
 }
